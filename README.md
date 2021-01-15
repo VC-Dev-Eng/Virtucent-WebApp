@@ -6,6 +6,7 @@ Initial of FrontEnd of Virtucent
 - [ ] As a user, I'd like to get the actual rate already deducted by 1% from the actual API rate. 
 - [ ] As a user I would like to see $7 fee. 
 - [ ] As a user, I'd like to convert NZD to IDR. 
+- [ ] As a user I wanted to be able to see the interface from my mobile phone.
 
 # Stretch 
 - [ ] As a user I'd like to see a conversion from IDR to NZD. 
