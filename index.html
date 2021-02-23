@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>VirtuCent</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="icon" type="image/icon" href="img/Logo.png">
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<img src="../img/LogoFull.png" id="logoFull">
+			<div id="container1">
+				<div>Send Money From</div>
+				<select id="from">
+					<option value="0" selected disabled>Select Country</option>
+				</select>
+				<div>Send Money To</div>
+				<select id="to">
+					<option value="0" selected disabled>Select Country</option>
+					<option disabled>Please Select Sender First</option>
+				</select>
+				<div>Send Amount</div>
+				<div class="flex">
+					<span id="symbol"></span>
+					<input id="inputAmount" name="inputAmount" type="text"/>
+				</div>
+				<Button>Submit</Button>
+			</div>
+			<div id="container2" hidden>
+				<div class="result">
+					<div id="senderSend"></div>
+					<div id="fee"></div>
+					<div id="rate"></div>
+					<div id="recipientGet"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
