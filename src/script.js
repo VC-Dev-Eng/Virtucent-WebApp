@@ -93,23 +93,27 @@ window.addEventListener('load', function() {
 
 		switch(from.value) {
 			case "1" :
-				switch(to.value) {
-					case "2" :
-						rate.innerText = `Our rate is ${currencyFormat((Math.round(data.result + (data.result * 0.005))).toString())}`
-						recipientGet.innerText = `Your Recipient Get NZD ${currencyFormat((Math.round(sendAmount / (data.result + (data.result * 0.005)))).toString())}`
-						break
+				if (sendAmount >= 500000) {
+					switch(to.value) {
+						case "2" :
+							rate.innerText = `Our rate is ${currencyFormat((Math.round(data.result + (data.result * 0.005))).toString())}`
+							recipientGet.innerText = `Your Recipient Get NZD ${currencyFormat((Math.round(sendAmount / (data.result + (data.result * 0.005)))).toString())}`
+							break
+					}
+					container1.setAttribute("hidden", true)
+					container2.removeAttribute("hidden")
+					senderSend.innerText = "You Send IDR " + inputAmount.value
+				} else {
+					alert("Minimum transfer is IDR 500.000")
 				}
-				container1.setAttribute("hidden", true)
-				container2.removeAttribute("hidden")
-				senderSend.innerText = "You Send IDR " + inputAmount.value
 				break
 			case "2" :
 				if (sendAmount > 7) {
 					switch(to.value) {
 						case "1" :
 							fee.innerText = "Our Fee is NZD 7"
-							rate.innerText = `Our rate is ${currencyFormat((Math.round(data.result - (data.result * 0.1))).toString())}`
-							recipientGet.innerText = `Your Recipient Get IDR ${currencyFormat(Math.round((sendAmount - 7) * (data.result - (data.result * 0.1))).toString())}`
+							rate.innerText = `Our rate is ${currencyFormat((Math.round(data.result)).toString())}`
+							recipientGet.innerText = `Your Recipient Get IDR ${currencyFormat(Math.round(((sendAmount - 7) * (data.result)) - (((sendAmount - 7) * (data.result)) * 0.01)).toString())}`
 							break
 					}
 					container1.setAttribute("hidden", true)
