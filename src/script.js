@@ -112,7 +112,7 @@ window.addEventListener('load', function() {
 					switch(to.value) {
 						case "1" :
 							fee.innerText = "Our Fee is NZD 7"
-							rate.innerText = `Our rate is ${currencyFormat((Math.round(data.result)).toString())}`
+							rate.innerText = `Our rate is ${currencyFormat((Math.round(data.result - (data.result * 0.01))).toString())}`
 							recipientGet.innerText = `Your Recipient Get IDR ${currencyFormat(Math.round(((sendAmount - 7) * (data.result)) - (((sendAmount - 7) * (data.result)) * 0.01)).toString())}`
 							break
 					}
